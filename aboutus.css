@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+/* ===== Base ===== */
+:root{
+  --paper:#f3e7c7;
+  --ink:#111;
+  --sub:#444;
+  --red:#d83a2e;
+  --border:#ddd;
+  --max:980px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  background:#fff;
+  color:var(--ink);
+  font-family:"Montserrat","Hiragino Sans","Noto Sans JP",sans-serif;
+  line-height:1.8;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+/* ===== 共通ヘッダー/フッター ===== */
+.header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  width:min(var(--max),92vw);
+  margin:0 auto;
+  padding:16px 0;
+}
+.menu{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.menu a{
+  text-decoration:none;
+  color:#111;
+  font-weight:700;
+  font-size:14px;
+}
+.menu a:hover{ opacity:.8; }
+
+.footer{
+  background:#fff;
+  border-top:1px solid var(--border);
+  margin-top:60px;
+  padding:26px 0;
+  text-align:center;
+  font-size:12px;
+}
+.footer .menu{ margin-bottom:12px; }
+
+/* ===== チラシ本体 ===== */
+.sheet{
+  width:min(var(--max),92vw);
+  margin:24px auto 0;
+  background:var(--paper);
+  border-radius:18px;
+  padding:26px 22px 22px;
+  box-shadow:0 16px 40px rgba(0,0,0,.12);
+  position:relative;
+}
+
+/* 上下チェック風 */
+.sheet::before,
+.sheet::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  height:14px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--red) 0 16px,
+    transparent 16px 32px
+  );
+  opacity:.9;
+}
+.sheet::before{ top:0; border-radius:18px 18px 0 0; }
+.sheet::after{ bottom:0; border-radius:0 0 18px 18px; }
+
+/* ===== 上：ロゴ＆タイトル ===== */
+.top{
+  padding-top:10px;
+  text-align:center;
+}
+.top-logo{
+  width:min(360px,80%);
+  margin:0 auto 8px;
+}
+.top-title{
+  margin:6px 0 10px;
+  font-size:32px;
+  font-weight:900;
+}
+
+/* ===== 概要 ===== */
+.overview{
+  background:#ffffffb3;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  padding:18px 18px;
+  margin:14px 0 18px;
+}
+.section-title{
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:900;
+}
+.overview p{
+  margin:0 0 10px;
+  color:var(--sub);
+}
+.overview p:last-child{ margin-bottom:0; }
+
+/* ===== メニュー見出し ===== */
+.menu-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  margin:14px 0 12px;
+}
+.menu-title{
+  margin:0;
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+.tax-note{
+  margin:0;
+  color:var(--red);
+  font-weight:800;
+  font-size:13px;
+}
+
+/* ===== 2列メニュー ===== */
+.menu-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+}
+
+.menu-card{
+  border:2px solid var(--red);
+  background:#fff;
+  border-radius:10px;
+  padding:14px 14px 12px;
+  position:relative;
+}
+
+.menu-img{
+  background:#fff;
+  border-radius:8px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  min-height:170px;
+}
+.menu-img img{
+  width:min(260px, 90%);
+}
+
+.menu-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-end;
+  margin-top:8px;
+}
+.menu-name{
+  font-weight:800;
+  font-size:14px;
+  line-height:1.4;
+}
+.menu-price{
+  font-weight:900;
+  font-size:32px;
+  color:var(--red);
+  white-space:nowrap;
+}
+
+/* 人気バッジ */
+.badge{
+  position:absolute;
+  left:-10px;
+  top:-10px;
+  background:var(--red);
+  color:#fff;
+  font-weight:900;
+  font-size:13px;
+  line-height:1.05;
+  padding:10px 10px;
+  border-radius:999px;
+  text-align:center;
+  transform:rotate(-12deg);
+  box-shadow:0 10px 18px rgba(0,0,0,.18);
+}
+
+/* オススメ文字 */
+.recommend-mark{
+  position:absolute;
+  left:-10px;
+  bottom:16px;
+  font-weight:900;
+  color:#111;
+  transform:rotate(-90deg);
+  transform-origin:left bottom;
+  font-size:13px;
+}
+
+/* ===== 詳細（長文） ===== */
+.detail{
+  margin-top:22px;
+}
+.detail-title{
+  text-align:center;
+  margin:0 0 12px;
+  font-size:20px;
+  font-weight:900;
+  padding:10px;
+  border:2px solid var(--red);
+  background:#fff;
+  border-radius:14px;
+}
+
+.detail-card{
+  background:#ffffffb3;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.detail-card h3{
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:900;
+  color:#111;
+}
+.detail-card p{
+  margin:0;
+  color:var(--sub);
+}
+
+/* ===== 下の電話帯 ===== */
+.sheet-footer{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(0,0,0,.12);
+  align-items:flex-end;
+}
+
+.footer-brand{
+  font-size:22px;
+  font-weight:900;
+}
+.footer-hours{
+  color:var(--sub);
+  font-size:13px;
+}
+
+.phone-box{
+  border:2px solid var(--red);
+  background:#fff;
+  border-radius:12px;
+  padding:12px 14px;
+}
+.phone-row{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.phone-label{
+  font-weight:900;
+}
+.phone-number{
+  font-weight:900;
+  font-size:22px;
+}
+.phone-note{
+  margin-top:6px;
+  color:var(--sub);
+  font-size:12px;
+}
+
+/* ===== SP ===== */
+@media (max-width: 768px){
+  .menu-grid{ grid-template-columns: 1fr; }
+  .menu-title{ font-size:28px; }
+  .menu-price{ font-size:28px; }
+  .sheet-footer{ flex-direction:column; align-items:stretch; }
+}

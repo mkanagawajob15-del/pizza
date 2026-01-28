@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/* =======================
+   RESET
+======================= */
+*,
+::before,
+::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =======================
+   BASE
+======================= */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --subtext: #555;
+  --accent: #0aa7ff;
+  --card: #eef6ff;
+  --border: #ddd;
+  --max: 1100px;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Montserrat", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+a{
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover{ opacity: .8; }
+
+/* =======================
+   HEADER
+======================= */
+.header{
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.header-inner{
+  width: min(var(--max), 92vw);
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.menu{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu a{
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =======================
+   MAIN
+======================= */
+.main{
+  width: min(var(--max), 92vw);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+}
+
+/* PC/スマホ画像切り替え（基本はPC） */
+.ruru-pc{ display: block; }
+.ruru-sp{ display: none; }
+
+/* ルール画像：PCは70%で中央 */
+.ruru img{
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer{
+  border-top: 1px solid var(--border);
+  background: #fff;
+  margin-top: 60px;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer .menu{
+  margin-bottom: 14px;
+}
+
+.copyright{
+  color: var(--subtext);
+}
+
+/* =======================
+   SP
+======================= */
+@media (max-width: 768px){
+  /* スマホは画像差し替え */
+  .ruru-pc{ display: none; }
+  .ruru-sp{ display: block; }
+
+  /* スマホは70%にしない */
+  .ruru img{
+    width: 100%;
+  }
+}
