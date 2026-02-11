@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+/* =======================
+   BASE
+======================= */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --subtext: #555;
+  --accent: #0aa7ff;
+  --card: #eef6ff;
+  --border: #ddd;
+  --max: 1100px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Montserrat", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a{
+  color: var(--accent);
+  text-decoration: none;
+  transition: .2s;
+}
+
+a:hover{ opacity: .8; }
+
+/* =======================
+   HEADER
+======================= */
+.header{
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.header-inner{
+  width: min(var(--max), 92vw);
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.menu{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu a{
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+.menu a:hover{
+  color: var(--accent);
+}
+
+/* =======================
+   CONTACT PAGE
+======================= */
+.contact-page{
+  width: min(var(--max), 92vw);
+  margin: 80px auto;
+}
+
+.contact-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.contact-card{
+  background: var(--card);
+  border-radius: 24px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-card p{
+  margin-bottom: 10px;
+  color: var(--subtext);
+}
+
+.contact-email{
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 10px;
+}
+
+/* SNS */
+.sns-section{
+  text-align: center;
+}
+
+.sns-section h2{
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.sns-grid{
+  display: grid;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.sns-item{
+  display: block;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  transition: .2s;
+}
+
+.sns-item:hover{
+  background: var(--card);
+  transform: translateY(-2px);
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer{
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 80px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px){
+  .contact-title{
+    font-size: 22px;
+  }
+
+  .contact-card{
+    padding: 30px 16px;
+  }
+}
