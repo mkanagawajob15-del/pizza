@@ -245,6 +245,31 @@ function showResult() {
   const tagsEl = document.getElementById("result-tags");
   tagsEl.innerHTML = r.tags.map(t => `<span class="tag">${t}</span>`).join("");
 
+  // シェア用テキスト
+  const shareText = `🍕 ピザ診断やってみた！\n\n私は「${r.pizza}」でした${r.emoji}\n\n${r.catch}\n\n${r.tags.join(" ")}\n#コリコリゲームズ #ピザ診断 #ゲームマーケット #ボードゲーム`;
+  const pageUrl = "https://korikori-games.com/shindan.html";
+
+  // X (Twitter) シェアリンク
+  const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
+  document.getElementById("share-x").href = tweetUrl;
+
+  // Instagram用（Web Share API or クリップボードコピー）
+  document.getElementById("share-insta").onclick = () => {
+    const instaText = shareText + "\n" + pageUrl;
+    if (navigator.share) {
+      navigator.share({ title: "ピザ診断結果", text: instaText });
+    } else {
+      navigator.clipboard.writeText(instaText).then(() => {
+        const btn = document.getElementById("share-insta");
+        const orig = btn.innerHTML;
+        btn.textContent = "✅ コピーしました！";
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      }).catch(() => {
+        prompt("テキストをコピーしてInstagramに貼り付けてね🍕", instaText);
+      });
+    }
+  };
+
   showScreen(resultScreen);
 }
 
