@@ -5,12 +5,13 @@
     <title>コリコリゲームズ公式</title>
     <meta name="description" content="コリコリゲームズホームページ">
     <meta name="viewport" content="width=device-width">
-    <link href="index.css" rel="stylesheet">
+    <link href="index.css?v=4" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/bwr6ido.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
+    <link href="theme.css?v=1" rel="stylesheet">
+</head>
 
   <body>
     <header class="header">
@@ -18,7 +19,6 @@
         <nav class="header-site-menu">
           <ul class="menu">
             <li><a href="./index.html">ホーム</a></li>
-            <li><a href="./asobikata.html">残ったピザどうする〜！？遊び方</a></li>
             <li><a href="./ourteam.html">役員紹介</a></li>
             <li><a href="https://www.instagram.com/korikori_games?igsh=MWYxY3AwNjAxcmV0Mw==">Instagrum</a></li>
             <li><a href=".https://note.com/alive_sedum6502/portal">ブログ</a></li>
@@ -43,6 +43,12 @@
     <img src="korikorilogo.webp" alt="">
   </div>
 
+  <a class="shindan-highlight" href="./shindan.html">
+    <span class="shindan-highlight-label">PIZZA PERSONALITY TEST</span>
+    <span class="shindan-highlight-text">🍕 あなたはどのピザ？ 診断してみよう！</span>
+    <span class="shindan-highlight-arrow">→</span>
+  </a>
+
   <div class="hero-inner">
     
     <div class="hero-copy">
@@ -56,37 +62,12 @@
     </div>
 
   </div>
- <div class="pizadousuru-wrap">
 
-  <div class="pizadousuru-movie">
-   <div class="youtube">
-  <iframe
-    width="560"
-    height="315"
-    src="https://youtu.be/8EQWa8GzjYQ?si=S5eHhIOe5i4E67D4"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-  <p class="yt-link">
-    <a href="https://youtu.be/a6S9L9FaqSQ" target="_blank" rel="noopener">
-      https://youtu.be/a6S9L9FaqSQ
-    </a>
-  </p>
-</div>
-
-
-
+<div class="asobikata-section">
+  <h2 class="asobikata-title">遊び方</h2>
+  <div class="asobikata-movie">
+    <iframe src="https://www.youtube.com/embed/8EQWa8GzjYQ" title="遊び方" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
-
-  <div class="pizadousuru">
-    <h3>新作！！発売予定　Joll's Pizzaとコラボ？！</h3>
-    <img src="gaiyou.webp">
-    <a class="btn" href="./asobikata.html">遊び方はこちら</a>
-  </div>
-
 </div>
 
 <div class="jolly">
@@ -106,9 +87,102 @@
         ただし注文受け付け時間は店長が起きている時間のみであり、
         場合によっては応答がなく、三分間愉快な音楽が流れるだけとなる。
       </p>
-
-      <a class="btn" href="./aboutus.html">詳しくはこちら</a>
     </div>
+  </div>
+
+  <h3 class="pizza-lineup-title">ピザラインナップ</h3>
+  <div class="pizza-grid">
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="1.png" alt="ベーコンのみピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.1</p>
+      <h4 class="pizza-card-name">ベーコンだけの攻めたピザ</h4>
+      <p class="pizza-card-desc">「ギリギリ買う人がいるかもしれない、具材が一種類だけでも許されるピザってなんだろう」と考えた時に思いついたのがこのピザ。ベーコンは何にでも合う。家で好きにトッピングできるし、アレンジ幅が広いのも魅力！まぁ私は買わないが。</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="2.png" alt="つぶつぶコーンピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.2</p>
+      <h4 class="pizza-card-name">一部に刺さるつぶつぶコーンピザ</h4>
+      <p class="pizza-card-desc">つぶつぶコーンって大半の日本人に刺さらない？子供の頃から好きだって人は多いだろう。一部と言っておきながら、もしかしたら大部分の人に刺さっているかもしれない。何気に売上上位に食い込んでるからおもろい。</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="3.png" alt="女児ピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.3</p>
+      <h4 class="pizza-card-name">女児ピザ</h4>
+      <p class="pizza-card-desc">BBQで何気に一番盛り上がるのって焼きマシュマロでは？おやつ系ピザの可能性を考えた時、焼きマシュマロピザなんてありよりのありだと思った。BBQの最後のとっておきのように、ピザパーティーの最後の一切れにいかが？</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="4.png" alt="コスパ最強ピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.4</p>
+      <h4 class="pizza-card-name">シンプルに一番コスパ良くてうまいピザ</h4>
+      <p class="pizza-card-desc">ピザって普通に高い。もっと安くて、学生に優しいコスパ最強のピザを作りたくてこのピザを生み出した。トマトとバジルとチーズ、つまるところ「マ〇ゲリータ」のようなもの。みんな王道は好きでしょ？😉</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="5.png" alt="明太もちピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.5</p>
+      <h4 class="pizza-card-name">有罪級の明太もちピザ</h4>
+      <p class="pizza-card-desc">明太子とお餅とチーズって、神が考えたんかってくらい最高の組み合わせ。この世に存在するありとあらゆる明太もちピザの中でもトップで美味いものを作ってやる、という気持ちで研究を重ねた。お金つぎ込みすぎて、一時期普通に生活費圧迫してた。</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="6.png" alt="シェフ自慢ピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.6</p>
+      <h4 class="pizza-card-name">試作が意外といけたシェフ自慢ピザ</h4>
+      <p class="pizza-card-desc">「ちょっと普通すぎるかな〜でもワンチャンありそう〜」とか言いながら気まぐれで作ってみたピザ。意外とガチで美味くて「ありやん」ってなったノリピザ（でも多分かっこつけて使った岩塩と高級チーズが効いてるだけ、全然意外じゃない）。</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="7.png" alt="ポルチーニピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.7</p>
+      <h4 class="pizza-card-name">ポルチーニ・ザ・優雅ピザ</h4>
+      <p class="pizza-card-desc">𝑰𝒕𝒂𝒍𝒊𝒂𝒏の友達から送られてくるポルチーニをふんだんに使った、当店では珍しく上品なピザ。やはり圧倒的な芳醇さが人を虜にする。ちなみにその友達には、代償として毎月カニを送ってるから結構プラマイゼロ。助けて。</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="8.png" alt="アロハピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.8</p>
+      <h4 class="pizza-card-name">アロハピザ</h4>
+      <p class="pizza-card-desc">熱された果物が苦手、だなんてもう言わせない。チーズの塩味とパイナップルのジューシーな甘さは相性抜群、ヨダレ必至。なんともクセになる味と、ほのかな南国の風を感じさせてくれるtasty pizza…一度試してみては？</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="9.png" alt="エビちゃんピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.9</p>
+      <h4 class="pizza-card-name">うふーん♡エビちゃんよーんピザ</h4>
+      <p class="pizza-card-desc">既視感を感じたあなたはちゃんとインターネットを追っているわね♡あの構文をなんとしても使いたくてこのエビちゃんピザに使ったの♡でも知り合いに「もう味しない」って言われたわ♡まだするだろ、信じない♡</p>
+    </article>
+
+    <article class="pizza-card">
+      <div class="pizza-card-img-wrap">
+        <img src="10.png" alt="テリヤキチキンピザ" class="pizza-card-img" onerror="this.style.display='none'">
+      </div>
+      <p class="pizza-card-num">No.10</p>
+      <h4 class="pizza-card-name">お前が大優勝、テリヤキチキンピザ</h4>
+      <p class="pizza-card-desc">やっっぱこれが一番うまいんよ。私もこれが一番好き。ジューシーさと旨さを兼ね備えた肉は世界を救う。チーズとの相性が圧倒的に良くて、一度食べ出したらもう止まることはできない。がめつくなってもいいから食べたいのがこのピザだ。さぁ、君は友情か食欲か、どっちを取る？</p>
+    </article>
+
   </div>
 <div class="yakuinn">
       <h2>役員紹介</h2>
@@ -227,7 +301,6 @@
       <nav class="header-site-menu">
           <ul class="menu">
             <li><a href="./index.html">ホーム</a></li>
-            <li><a href="./asobikata.html">残ったピザどうする〜！？遊び方</a></li>
             <li><a href="./ourteam.html">役員紹介</a></li>
             <li><a href="https://www.instagram.com/korikori_games?igsh=MWYxY3AwNjAxcmV0Mw==">Instagrum</a></li>
             <li><a href=".https://note.com/alive_sedum6502/portal">ブログ</a></li>
