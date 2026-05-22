@@ -1,0 +1,65 @@
+/* =======================
+   CONTACT PAGE
+======================= */
+.contact-page{
+  width: min(var(--max), 92vw);
+  margin: 80px auto;
+}
+
+.contact-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.contact-card{
+  background: var(--card);
+  border-radius: 24px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-card p{
+  margin-bottom: 10px;
+  color: var(--subtext);
+}
+
+.contact-email{
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 10px;
+}
+
+.sns-section{
+  text-align: center;
+}
+
+.sns-section h2{
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.sns-grid{
+  display: grid;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.sns-item{
+  display: block;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  transition: .2s;
+}
+
+.sns-item:hover{
+  background: var(--card);
+}

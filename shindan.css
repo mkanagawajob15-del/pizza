@@ -1,0 +1,273 @@
+/* =======================
+   SHINDAN PAGE
+======================= */
+.shindan-wrap {
+  width: min(680px, 92vw);
+  margin: 60px auto 100px;
+  text-align: center;
+}
+
+.shindan-header {
+  margin-bottom: 48px;
+}
+
+.shindan-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+.shindan-title {
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 800;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.shindan-desc {
+  color: var(--subtext);
+  margin: 0;
+  font-size: 15px;
+}
+
+/* =======================
+   SCREENS
+======================= */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* =======================
+   START
+======================= */
+.pizza-emoji-row {
+  font-size: 48px;
+  margin-bottom: 24px;
+  letter-spacing: 8px;
+}
+
+.start-text {
+  color: var(--subtext);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+/* =======================
+   PROGRESS
+======================= */
+.progress-wrap {
+  margin-bottom: 28px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--card);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width .4s ease;
+  width: 10%;
+}
+
+.progress-text {
+  font-size: 13px;
+  color: var(--subtext);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =======================
+   QUESTION CARD
+======================= */
+.question-card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 36px 32px;
+}
+
+.question-text {
+  font-size: clamp(17px, 3vw, 22px);
+  font-weight: 700;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .choices {
+    grid-template-columns: 1fr;
+  }
+
+  .question-card {
+    padding: 24px 16px;
+  }
+}
+
+.choice-btn {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;
+  transition: border-color .2s, background .2s, transform .1s;
+  color: var(--text);
+}
+
+.choice-btn:hover {
+  border-color: var(--accent);
+  background: #e8f6ff;
+  transform: translateY(-2px);
+}
+
+.choice-btn.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  transform: scale(.97);
+}
+
+/* =======================
+   RESULT
+======================= */
+.result-num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--subtext);
+  margin: 0 0 4px;
+}
+
+.result-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+
+.result-card {
+  background: var(--card);
+  border-radius: 28px;
+  padding: 40px 32px 36px;
+  margin-bottom: 32px;
+}
+
+.result-emoji {
+  font-size: 64px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.result-pizza {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.result-catch {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+
+.result-desc {
+  font-size: 15px;
+  color: var(--subtext);
+  line-height: 1.8;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tag {
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.shindan-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s, transform .1s;
+  text-decoration: none;
+}
+
+.shindan-btn:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  margin-left: 12px;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.result-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen.active {
+  animation: fadeIn .4s ease;
+}
