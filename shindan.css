@@ -342,6 +342,11 @@
   color: #fff;
 }
 
+.share-fb {
+  background: #1877F2;
+  color: #fff !important;
+}
+
 /* アニメーション */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(16px); }
