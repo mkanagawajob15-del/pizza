@@ -6,7 +6,7 @@
     <meta name="description" content="10問の質問に答えて、あなたにぴったりのピザを診断！">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="index.css?v=2" rel="stylesheet">
-    <link href="shindan.css?v=5" rel="stylesheet">
+    <link href="shindan.css?v=6" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/bwr6ido.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +58,16 @@
             <p class="question-text" id="question-text"></p>
             <div class="choices" id="choices"></div>
           </div>
+        </div>
+
+        <!-- ストーリー用カード（非表示・スクショ用） -->
+        <div id="story-card">
+          <div class="story-brand">🍕 コリコリゲームズ ピザ診断</div>
+          <div class="story-emoji" id="story-emoji"></div>
+          <div class="story-pizza" id="story-pizza"></div>
+          <div class="story-catch" id="story-catch"></div>
+          <div class="story-tags" id="story-tags"></div>
+          <div class="story-footer">#コリコリゲームズ #ピザ診断</div>
         </div>
 
         <!-- 結果画面 -->
@@ -115,6 +125,7 @@
       <p class="copyright"><small>&copy;コリコリゲームズ</small></p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="shindan.js"></script>
   </body>
 </html>

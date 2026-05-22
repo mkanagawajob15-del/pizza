@@ -263,6 +263,80 @@
 }
 
 /* =======================
+   STORY CARD（スクショ用・非表示）
+======================= */
+#story-card {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 540px;
+  height: 960px;
+  background: #F5EDD8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  box-sizing: border-box;
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  gap: 16px;
+}
+
+.story-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: #C41E0E;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+
+.story-emoji {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.story-pizza {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A1A;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.story-catch {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2A6E1A;
+  text-align: center;
+}
+
+.story-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.story-tag {
+  background: #fff;
+  border: 2px solid #2A6E1A;
+  color: #2A6E1A;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.story-footer {
+  font-size: 16px;
+  font-weight: 700;
+  color: #5A4E3E;
+  margin-top: 16px;
+  letter-spacing: .05em;
+}
+
+/* =======================
    CF BUTTON
 ======================= */
 .cf-btn {

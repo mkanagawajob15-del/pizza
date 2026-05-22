@@ -246,8 +246,8 @@ function showResult() {
   tagsEl.innerHTML = r.tags.map(t => `<span class="tag">${t}</span>`).join("");
 
   // シェア用テキスト
-  const shareText = `🍕 ピザ診断やってみた！\n\n私は「${r.pizza}」でした${r.emoji}\n\n${r.catch}\n\n${r.tags.join(" ")}\n#コリコリゲームズ #ピザ診断 #ゲームマーケット #ボードゲーム`;
-  const pageUrl = "https://korikori-games.com/shindan.html";
+  const shareText = `🍕 ピザ診断やってみた！\n\n私は「${r.pizza}」でした${r.emoji}\n\n${r.catch}\n\n${r.tags.join(" ")}\n#コリコリゲームズ #ピザ診断 #ゲームマーケット #ボードゲーム #ゲムマ春2026 #ゲームマーケット2026`;
+  const pageUrl = "https://mkanagawajob15-del.github.io/pizza/shindan.html?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAR8zaNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafJPayctXpd1hmc-Mf7yo83FBRmo_16xaDdAIcLGpJLk6BGIiljVg6DZUhzVg_aem_il9RUl9ZFmJugKOzQ4nc9Q";
 
   // X (Twitter) シェアリンク
   const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
@@ -257,20 +257,51 @@ function showResult() {
   const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&quote=" + encodeURIComponent(shareText);
   document.getElementById("share-fb").href = fbUrl;
 
-  // Instagram用（Web Share API or クリップボードコピー）
-  document.getElementById("share-insta").onclick = () => {
-    const instaText = shareText + "\n" + pageUrl;
-    if (navigator.share) {
-      navigator.share({ title: "ピザ診断結果", text: instaText });
-    } else {
-      navigator.clipboard.writeText(instaText).then(() => {
-        const btn = document.getElementById("share-insta");
-        const orig = btn.innerHTML;
-        btn.textContent = "✅ コピーしました！";
-        setTimeout(() => { btn.innerHTML = orig; }, 2000);
-      }).catch(() => {
-        prompt("テキストをコピーしてInstagramに貼り付けてね🍕", instaText);
+  // ストーリーカードにも結果を反映
+  document.getElementById("story-emoji").textContent = r.emoji;
+  document.getElementById("story-pizza").textContent = r.pizza;
+  document.getElementById("story-catch").textContent  = r.catch;
+  document.getElementById("story-tags").innerHTML = r.tags.map(t => `<span class="story-tag">${t}</span>`).join("");
+
+  // Instagram ストーリー用スクショ共有
+  document.getElementById("share-insta").onclick = async () => {
+    const btn = document.getElementById("share-insta");
+    const origHTML = btn.innerHTML;
+    btn.innerHTML = "⏳ 画像を作成中...";
+    btn.disabled = true;
+
+    try {
+      const card = document.getElementById("story-card");
+      const canvas = await html2canvas(card, {
+        backgroundColor: "#F5EDD8",
+        scale: 2,
+        useCORS: true,
+        logging: false
       });
+
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], "pizza-shindan.png", { type: "image/png" });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          // スマホ：ネイティブシェアシート（Instagramストーリーが選べる）
+          await navigator.share({ files: [file], title: "ピザ診断結果" });
+        } else {
+          // PC：画像をダウンロード
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "pizza-shindan.png";
+          a.click();
+          URL.revokeObjectURL(url);
+          alert("画像をダウンロードしました！\nInstagramのストーリーに投稿してね🍕");
+        }
+
+        btn.innerHTML = origHTML;
+        btn.disabled = false;
+      }, "image/png");
+    } catch (e) {
+      btn.innerHTML = origHTML;
+      btn.disabled = false;
     }
   };
 
