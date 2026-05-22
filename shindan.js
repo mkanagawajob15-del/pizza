@@ -253,6 +253,10 @@ function showResult() {
   const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
   document.getElementById("share-x").href = tweetUrl;
 
+  // Facebook シェアリンク
+  const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&quote=" + encodeURIComponent(shareText);
+  document.getElementById("share-fb").href = fbUrl;
+
   // Instagram用（Web Share API or クリップボードコピー）
   document.getElementById("share-insta").onclick = () => {
     const instaText = shareText + "\n" + pageUrl;
