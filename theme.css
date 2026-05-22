@@ -1,0 +1,64 @@
+/* ===========================
+   KORIKORI GAMES — THEME
+   赤・緑・黒・ベージュ
+=========================== */
+:root {
+  --bg:      #F5EDD8;
+  --text:    #1A1A1A;
+  --subtext: #5A4E3E;
+  --accent:  #C41E0E;
+  --green:   #2A6E1A;
+  --card:    #EDE4CA;
+  --border:  #C4B89A;
+  --black:   #1A1A1A;
+  --max:     1100px;
+}
+
+/* ベースカラー */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* リンク */
+a { color: var(--accent); }
+
+/* ヘッダー */
+.header {
+  background: var(--black) !important;
+  border-bottom: 3px solid var(--accent) !important;
+}
+
+.menu a {
+  color: #F5EDD8 !important;
+}
+
+.menu a:hover {
+  color: var(--accent) !important;
+  opacity: 1;
+}
+
+/* フッター */
+.footer {
+  background: var(--black) !important;
+  border-top: 3px solid var(--accent) !important;
+  color: #F5EDD8 !important;
+}
+
+.footer .menu a,
+.footer a {
+  color: #F5EDD8 !important;
+}
+
+/* ボタン */
+.btn {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+/* カード系背景 */
+.pizadousuru,
+.member-photo-wrap,
+.img-wrap {
+  background: var(--card) !important;
+}

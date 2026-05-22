@@ -4,12 +4,14 @@
    BASE
 ======================= */
 :root{
-  --bg: #ffffff;
-  --text: #111111;
-  --subtext: #555;
-  --accent: #0aa7ff;
-  --card: #eef6ff;
-  --border: #ddd;
+  --bg: #F5EDD8;
+  --text: #1A1A1A;
+  --subtext: #5A4E3E;
+  --accent: #C41E0E;
+  --green: #2A6E1A;
+  --card: #EDE4CA;
+  --border: #C4B89A;
+  --black: #1A1A1A;
   --max: 1100px;
 }
 
@@ -33,6 +35,10 @@ img{
   display: block;
 }
 
+img[src=""] {
+  display: none;
+}
+
 a{
   color: var(--accent);
   text-decoration: none;
@@ -43,8 +49,8 @@ a:hover{ opacity: .8; }
    HEADER
 ======================= */
 .header{
-  border-bottom: 1px solid var(--border);
-  background: #fff;
+  border-bottom: 3px solid var(--accent);
+  background: var(--black);
 }
 
 .header-inner{
@@ -66,7 +72,12 @@ a:hover{ opacity: .8; }
 .menu a{
   font-size: 14px;
   font-weight: 600;
-  color: #111;
+  color: #F5EDD8;
+}
+
+.menu a:hover {
+  color: var(--accent);
+  opacity: 1;
 }
 
 /* =======================
@@ -166,6 +177,36 @@ a:hover{ opacity: .8; }
 
 
 /* =======================
+   ASOBIKATA
+======================= */
+.asobikata-section {
+  width: min(var(--max), 92vw);
+  margin: 48px auto;
+  text-align: center;
+}
+
+.asobikata-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.asobikata-movie {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+
+.asobikata-movie iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =======================
    BLOG
 ======================= */
 .ourteam{
@@ -188,7 +229,7 @@ a:hover{ opacity: .8; }
 }
 
 .img-wrap{
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
@@ -273,13 +314,162 @@ a:hover{ opacity: .8; }
 }
 
 /* =======================
+   SHINDAN HIGHLIGHT
+======================= */
+.shindan-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 16px;
+  padding: 14px 24px;
+  margin: 0 auto 40px;
+  max-width: 560px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity .2s, transform .15s;
+}
+
+.shindan-highlight:hover {
+  opacity: .88;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.shindan-highlight-label {
+  font-size: 10px;
+  letter-spacing: .12em;
+  opacity: .85;
+  white-space: nowrap;
+}
+
+.shindan-highlight-text {
+  font-size: 15px;
+  flex: 1;
+}
+
+.shindan-highlight-arrow {
+  font-size: 18px;
+}
+
+/* =======================
+   PIZZA LINEUP
+======================= */
+.pizza-lineup-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 60px 0 28px;
+}
+
+.pizza-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pizza-card {
+  background: #FAF6EE;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.pizza-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(196,30,14,.12);
+  border-color: var(--accent);
+}
+
+.pizza-card-img-wrap {
+  background: var(--card);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pizza-card-img-wrap::after {
+  content: "🍕";
+  font-size: 48px;
+  opacity: .25;
+}
+
+.pizza-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  padding: 8px;
+}
+
+.pizza-card-img[src]:not([src=""]) {
+  display: block;
+}
+
+.pizza-card-img[src]:not([src=""]) ~ ::after,
+.pizza-card-img-wrap:has(img[src]:not([src=""]))::after {
+  display: none;
+}
+
+.pizza-card > *:not(.pizza-card-img-wrap) {
+  padding: 0 16px;
+}
+
+.pizza-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .1em;
+  margin: 14px 0 4px;
+}
+
+.pizza-card-name {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.pizza-card-desc {
+  font-size: 13px;
+  color: var(--subtext);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 600px) {
+  .shindan-highlight {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    padding: 16px;
+  }
+  .shindan-highlight-arrow {
+    display: none;
+  }
+}
+
+/* =======================
    FOOTER
 ======================= */
 .footer{
-  border-top: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  background: var(--black);
+  color: #F5EDD8;
   padding: 40px 0;
   text-align: center;
   font-size: 12px;
+}
+
+.footer .menu a {
+  color: #F5EDD8;
 }
 @media (max-width: 768px){
 

@@ -121,7 +121,7 @@
 }
 
 .choice-btn {
-  background: #fff;
+  background: #FAF6EE;
   border: 2px solid var(--border);
   border-radius: 16px;
   padding: 16px 14px;
@@ -137,7 +137,7 @@
 
 .choice-btn:hover {
   border-color: var(--accent);
-  background: #e8f6ff;
+  background: #F9E8E6;
   transform: translateY(-2px);
 }
 
@@ -155,7 +155,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .1em;
-  color: var(--subtext);
+  color: var(--green);
   margin: 0 0 4px;
 }
 
@@ -190,7 +190,7 @@
 .result-catch {
   font-size: 16px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--green);
   margin: 0 0 16px;
 }
 
@@ -210,9 +210,9 @@
 }
 
 .tag {
-  background: #fff;
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
+  background: #FAF6EE;
+  border: 1.5px solid var(--green);
+  color: var(--green);
   border-radius: 999px;
   padding: 4px 14px;
   font-size: 13px;
@@ -245,13 +245,13 @@
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--green);
+  color: var(--green);
   margin-left: 12px;
 }
 
 .btn-outline:hover {
-  background: var(--accent);
+  background: var(--green);
   color: #fff;
 }
 
