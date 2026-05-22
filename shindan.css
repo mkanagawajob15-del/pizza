@@ -262,6 +262,86 @@
   gap: 12px;
 }
 
+/* =======================
+   CF BUTTON
+======================= */
+.cf-btn {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 18px 24px;
+  background: var(--green);
+  color: #fff !important;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: opacity .2s, transform .15s;
+  box-shadow: 0 4px 16px rgba(42,110,26,.25);
+}
+
+.cf-btn:hover {
+  opacity: .88;
+  transform: translateY(-2px);
+  color: #fff !important;
+}
+
+/* =======================
+   SHARE
+======================= */
+.share-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.share-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--subtext);
+  margin: 0 0 12px;
+  letter-spacing: .08em;
+}
+
+.share-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: opacity .2s, transform .1s;
+}
+
+.share-btn:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+.share-x {
+  background: #000;
+  color: #fff !important;
+}
+
+.share-insta {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
 /* アニメーション */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(16px); }
